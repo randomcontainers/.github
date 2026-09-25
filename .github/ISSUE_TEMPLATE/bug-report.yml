@@ -1,0 +1,61 @@
+name: Report a problem with an image
+description: A missing library or feature, a wrong tag, a permission error or another problem with a randomcontainers image.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Open this in the repository of the image you use, for example randomcontainers/yt-dlp. For a combined image such as yt-dlp-ffmpeg, use the repository of the tool it belongs to, here randomcontainers/yt-dlp. If the tool behaves the same way outside the container, report it upstream instead ([details](https://github.com/randomcontainers/.github/blob/main/SUPPORT.md#problems-with-the-tool-itself)).
+  - type: input
+    id: image
+    attributes:
+      label: Image and tag
+      placeholder: ghcr.io/randomcontainers/yt-dlp:latest
+    validations:
+      required: true
+  - type: input
+    id: digest
+    attributes:
+      label: Image digest
+      description: "Output of `docker image inspect --format '{{index .RepoDigests 0}}' <image>`."
+      placeholder: ghcr.io/randomcontainers/yt-dlp@sha256:...
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      description: Apple silicon Macs and most ARM servers use linux/arm64.
+      multiple: true
+      options:
+        - linux/amd64
+        - linux/arm64
+    validations:
+      required: true
+  - type: input
+    id: runtime
+    attributes:
+      label: Container runtime and host
+      placeholder: Docker Engine on Ubuntu 24.04, rootful
+  - type: textarea
+    id: command
+    attributes:
+      label: Command
+      description: The full command, including all `docker run` options.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+      description: What happened instead, with the complete output or error message.
+      render: text
+    validations:
+      required: true
