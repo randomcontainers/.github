@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Bug in the tool itself
+    url: https://github.com/randomcontainers/.github/blob/main/SUPPORT.md#problems-with-the-tool-itself
+    about: If the tool misbehaves the same way outside the container, report it to the upstream project.
+  - name: Image documentation
+    url: https://github.com/randomcontainers
+    about: The list of images. Each image's README covers tags, pull commands and usage.

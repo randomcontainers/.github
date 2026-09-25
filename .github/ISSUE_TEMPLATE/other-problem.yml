@@ -1,0 +1,20 @@
+name: Report another problem
+description: A problem with the build workflows or the rc tool rather than with one image.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Open this in [randomcontainers/ci](https://github.com/randomcontainers/ci/issues) for the build workflows and the `rc` tool. Problems with an image itself go in that image's repository.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you did, what you expected and what happened instead, with any error message.
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: URL or command
+      placeholder: https://github.com/randomcontainers/yt-dlp/actions/runs/<id>
