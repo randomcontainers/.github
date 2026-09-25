@@ -1,0 +1,49 @@
+name: Request a tool
+description: Suggest an open-source command-line tool to package.
+title: "Request: "
+labels: ["tool request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Requests are tracked in [randomcontainers/.github](https://github.com/randomcontainers/.github/issues); check the open ones first. [CONTRIBUTING.md](https://github.com/randomcontainers/.github/blob/main/CONTRIBUTING.md#requesting-a-tool) explains what makes a tool a good fit.
+  - type: input
+    id: tool
+    attributes:
+      label: Tool name
+      placeholder: exiftool
+    validations:
+      required: true
+  - type: input
+    id: upstream
+    attributes:
+      label: Upstream project
+      description: Homepage or source repository.
+      placeholder: https://github.com/owner/project
+    validations:
+      required: true
+  - type: textarea
+    id: existing-images
+    attributes:
+      label: Why existing images don't work for you
+      description: Name the images you tried and what they lack, for example recent versions, an arm64 build or a non-root user. Write "none found" if there are none.
+    validations:
+      required: true
+  - type: textarea
+    id: usage
+    attributes:
+      label: Typical use
+      description: What you would run the image for. Example commands help most.
+    validations:
+      required: true
+  - type: textarea
+    id: combos
+    attributes:
+      label: Tools it pairs with
+      description: Other tools the default image should include for common tasks, the way the yt-dlp image includes FFmpeg. Leave empty if the tool works on its own.
+  - type: checkboxes
+    id: contribute
+    attributes:
+      label: Contributing
+      options:
+        - label: I would like to write and test the package myself.
