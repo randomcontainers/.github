@@ -47,7 +47,7 @@ docker buildx build -f Dockerfile.ubuntu --target slim \
   --load -t local/yt-dlp:slim .
 ```
 
-For Alpine, use `-f Dockerfile.alpine` and `BASE_IMAGE=alpine:3.24`. CI takes its base images from [`distros.yml`](https://github.com/randomcontainers/ci/blob/main/distros.yml) in randomcontainers/ci. Packages built from a source tarball also need `--build-arg SOURCE_SHA256=...` with the value of `upstream.artifact.sha256`, and compiled packages accept `--build-arg JOBS=<n>` to limit parallel compile jobs.
+For Alpine, use `-f Dockerfile.alpine` and `BASE_IMAGE=alpine:3.24`. CI takes its base images from [`distros.yml`](https://github.com/randomcontainers/ci/blob/main/distros.yml) in randomcontainers/ci. Packages built from a source tarball also need `--build-arg SOURCE_SHA256=...` with the value of `upstream.artifact.sha256`, and packages built from a git tag need `--build-arg SOURCE_COMMIT=...` with `upstream.git.commit`. Each entry under `upstream.extra-artifacts` needs its `<NAME>_VERSION` and `<NAME>_SHA256`, such as `GTS_VERSION` and `GTS_SHA256` for `gts`. Compiled packages accept `--build-arg JOBS=<n>` to limit parallel compile jobs.
 
 Run each entry under `test` in `package.yml` the way CI does: as your own user, with an empty directory mounted at `/work` and `VERSION` set.
 
