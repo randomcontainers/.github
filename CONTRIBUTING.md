@@ -7,7 +7,7 @@ This guide applies to every randomcontainers repository that does not have its o
 Use the [Request a tool](https://github.com/randomcontainers/.github/issues/new?template=tool-request.yml) form. A tool is a good fit when:
 
 - it is open source and used from the command line;
-- upstream publishes versioned releases on PyPI, as GitHub releases or as tags in a GitHub repository, so new versions can be picked up automatically;
+- upstream publishes versioned releases that can be picked up automatically: on PyPI, as GitHub or GitLab releases, as tags on GitHub or Codeberg, or as versioned files on a download page;
 - no maintained image already has upstream version tags, Ubuntu and Alpine variants, a default and a slim image, a non-root user, amd64 and arm64 builds, and build provenance.
 
 Name the images you tried and what they lack; that usually decides a request. If you want to write the package yourself, say so on the form. Once a request is accepted, a maintainer creates the repository and you open a pull request against it. When that pull request is merged, the package is added to the build list in randomcontainers/ci.
