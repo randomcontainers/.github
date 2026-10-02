@@ -54,11 +54,11 @@ The default images that add other tools are also published under their own names
 
 ## Pulling
 
+The images are published to the GitHub Container Registry as `ghcr.io/randomcontainers/<name>`:
+
 ```sh
 docker pull ghcr.io/randomcontainers/yt-dlp
 ```
-
-The same images can also be pulled as `randomcontainers.com/<name>`.
 
 ## Default and slim
 
