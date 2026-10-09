@@ -12,6 +12,10 @@ randomcontainers builds up-to-date container images for open-source software, st
 | [mediainfo](https://github.com/randomcontainers/mediainfo) | Reports the codecs, bit rates and tracks of video and audio files | MediaInfo, FFmpeg |
 | [mkvtoolnix](https://github.com/randomcontainers/mkvtoolnix) | Creates, edits and extracts from Matroska and WebM files | MKVToolNix, FFmpeg, MediaInfo |
 | [whisper-cpp](https://github.com/randomcontainers/whisper-cpp) | Transcribes and translates speech on the CPU (models not included) | whisper.cpp, FFmpeg |
+| [vmaf](https://github.com/randomcontainers/vmaf) | Scores the quality of an encoded video against its source | VMAF, FFmpeg |
+| [audiowaveform](https://github.com/randomcontainers/audiowaveform) | Generates waveform data and images from audio files | audiowaveform, FFmpeg |
+| [srt](https://github.com/randomcontainers/srt) | Streams live video, sends files and tunnels TCP over SRT | SRT tools, FFmpeg |
+| [shaka-packager](https://github.com/randomcontainers/shaka-packager) | Packages and encrypts video, audio and subtitles for DASH and HLS streaming | Shaka Packager, FFmpeg |
 
 ### Image files
 
@@ -20,6 +24,8 @@ randomcontainers builds up-to-date container images for open-source software, st
 | [imagemagick](https://github.com/randomcontainers/imagemagick) | Converts and edits images | ImageMagick, Ghostscript |
 | [exiftool](https://github.com/randomcontainers/exiftool) | Reads, writes and removes metadata in images, video and documents | ExifTool, ImageMagick |
 | [jpegoptim](https://github.com/randomcontainers/jpegoptim) | Makes JPEG files smaller | jpegoptim, ImageMagick |
+| [libjpeg-turbo](https://github.com/randomcontainers/libjpeg-turbo) | Rotates, crops and optimizes JPEG files losslessly, and converts images to and from JPEG | libjpeg-turbo, ExifTool |
+| [libheif](https://github.com/randomcontainers/libheif) | Converts HEIC and AVIF photos, and encodes images as HEIC or AVIF | libheif, ExifTool |
 
 ### PDF and documents
 
@@ -38,7 +44,16 @@ randomcontainers builds up-to-date container images for open-source software, st
 |---|---|---|
 | [graphviz](https://github.com/randomcontainers/graphviz) | Draws graphs written in the DOT language | Graphviz |
 | [doxygen](https://github.com/randomcontainers/doxygen) | Generates documentation from comments in source code | Doxygen, Graphviz |
+| [sphinx](https://github.com/randomcontainers/sphinx) | Builds documentation from reStructuredText into HTML, LaTeX, ePub and man pages | Sphinx, Graphviz |
 | [yamllint](https://github.com/randomcontainers/yamllint) | Checks YAML files for syntax errors and formatting problems | yamllint |
+| [check-jsonschema](https://github.com/randomcontainers/check-jsonschema) | Validates JSON, YAML and TOML files against a JSON Schema, with schemas for CI configuration | check-jsonschema |
+| [jsonnet](https://github.com/randomcontainers/jsonnet) | Evaluates, formats and lints Jsonnet configuration | Jsonnet (Go implementation) |
+| [libxml2](https://github.com/randomcontainers/libxml2) | Checks, validates, formats and transforms XML files | libxml2, libxslt |
+| [codespell](https://github.com/randomcontainers/codespell) | Finds and fixes common misspellings in source code and documentation | codespell |
+| [vale](https://github.com/randomcontainers/vale) | Checks prose in Markdown, HTML and code comments against your style rules (styles not included) | Vale |
+| [cppcheck](https://github.com/randomcontainers/cppcheck) | Finds bugs and undefined behavior in C and C++ code by static analysis | Cppcheck |
+| [protoc](https://github.com/randomcontainers/protoc) | Generates code from Protocol Buffers .proto files | protoc |
+| [duckdb](https://github.com/randomcontainers/duckdb) | Runs SQL queries on CSV, Parquet and JSON files and on DuckDB databases | DuckDB |
 
 ### Files and networks
 
@@ -46,11 +61,15 @@ randomcontainers builds up-to-date container images for open-source software, st
 |---|---|---|
 | [7zip](https://github.com/randomcontainers/7zip) | Creates and extracts 7z, zip, tar and many other archives | 7-Zip |
 | [rsync](https://github.com/randomcontainers/rsync) | Copies and synchronizes files, sending only what changed | rsync |
+| [openssh-client](https://github.com/randomcontainers/openssh-client) | Logs in to SSH servers, copies files with scp and sftp, and manages keys | OpenSSH client |
 | [iperf3](https://github.com/randomcontainers/iperf3) | Measures network throughput between two hosts | iperf3 |
 | [nmap](https://github.com/randomcontainers/nmap) | Discovers hosts and services and scans ports, with Ncat and Nping | Nmap |
+| [dig](https://github.com/randomcontainers/dig) | Queries DNS servers and sends dynamic updates | BIND 9 client tools |
 | [tcpdump](https://github.com/randomcontainers/tcpdump) | Captures and decodes network packets | tcpdump |
+| [tshark](https://github.com/randomcontainers/tshark) | Captures and decodes network traffic with Wireshark's dissectors, without the GUI | TShark, tcpdump |
+| [openssl](https://github.com/randomcontainers/openssl) | Makes keys and certificates and tests TLS connections | OpenSSL |
 
-The default images that add other tools are also published under their own names, with the same contents and no slim tags: `yt-dlp-ffmpeg`, `streamlink-ffmpeg`, `mediainfo-ffmpeg`, `mkvtoolnix-ffmpeg-mediainfo`, `whisper-cpp-ffmpeg`, `imagemagick-ghostscript`, `exiftool-imagemagick`, `jpegoptim-imagemagick`, `qpdf-ghostscript`, `tesseract-poppler`, `weasyprint-qpdf` and `doxygen-graphviz`. Where a default image adds another tool from this list, it is that tool's `slim` build: ImageMagick in `exiftool` and `jpegoptim`, for example, has no Ghostscript.
+The default images that add other tools are also published under their own names, with the same contents and no slim tags: `yt-dlp-ffmpeg`, `streamlink-ffmpeg`, `mediainfo-ffmpeg`, `mkvtoolnix-ffmpeg-mediainfo`, `whisper-cpp-ffmpeg`, `vmaf-ffmpeg`, `audiowaveform-ffmpeg`, `srt-ffmpeg`, `shaka-packager-ffmpeg`, `imagemagick-ghostscript`, `exiftool-imagemagick`, `jpegoptim-imagemagick`, `libjpeg-turbo-exiftool`, `libheif-exiftool`, `qpdf-ghostscript`, `tesseract-poppler`, `weasyprint-qpdf`, `doxygen-graphviz`, `sphinx-graphviz` and `tshark-tcpdump`. `check-jsonschema-yamllint` is published the same way but is not a default image: it adds yamllint to check-jsonschema. Where a default image adds another tool from this list, it is that tool's `slim` build: ImageMagick in `exiftool` and `jpegoptim`, for example, has no Ghostscript.
 
 ## Pulling
 
