@@ -26,6 +26,7 @@ randomcontainers builds up-to-date container images for open-source software, st
 | [jpegoptim](https://github.com/randomcontainers/jpegoptim) | Makes JPEG files smaller | jpegoptim, ImageMagick |
 | [libjpeg-turbo](https://github.com/randomcontainers/libjpeg-turbo) | Rotates, crops and optimizes JPEG files losslessly, and converts images to and from JPEG | libjpeg-turbo, ExifTool |
 | [libheif](https://github.com/randomcontainers/libheif) | Converts HEIC and AVIF photos, and encodes images as HEIC or AVIF | libheif, ExifTool |
+| [libvips](https://github.com/randomcontainers/libvips) | Converts, resizes and makes thumbnails of images, including very large ones | libvips |
 
 ### PDF and documents
 
@@ -51,6 +52,7 @@ randomcontainers builds up-to-date container images for open-source software, st
 | [libxml2](https://github.com/randomcontainers/libxml2) | Checks, validates, formats and transforms XML files | libxml2, libxslt |
 | [codespell](https://github.com/randomcontainers/codespell) | Finds and fixes common misspellings in source code and documentation | codespell |
 | [vale](https://github.com/randomcontainers/vale) | Checks prose in Markdown, HTML and code comments against your style rules (styles not included) | Vale |
+| [clang-format](https://github.com/randomcontainers/clang-format) | Formats C, C++, Java, JavaScript and other source code to a configured style | clang-format |
 | [cppcheck](https://github.com/randomcontainers/cppcheck) | Finds bugs and undefined behavior in C and C++ code by static analysis | Cppcheck |
 | [protoc](https://github.com/randomcontainers/protoc) | Generates code from Protocol Buffers .proto files | protoc |
 | [duckdb](https://github.com/randomcontainers/duckdb) | Runs SQL queries on CSV, Parquet and JSON files and on DuckDB databases | DuckDB |
